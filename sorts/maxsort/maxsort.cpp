@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <unistd.h>
 
+
 using namespace std;
 
 vector<int> boubleSort(vector<int> arr)
@@ -83,6 +84,45 @@ vector<int> quicksort(vector<int> arr)
     return QuickSort(arr, 0, arr.size() - 1);
 }
 
+vector<int> merge_sort(vector<int> arr)
+{
+    if (arr.size() <= 1)
+    {
+        return arr;
+    }
+    int mid = arr.size() / 2;
+    vector<int> left(arr.begin(), arr.begin() + mid);
+    vector<int> right(arr.begin() + mid, arr.end());
+    left = merge_sort(left);
+    right = merge_sort(right);
+    vector<int> result;
+    int i = 0, j = 0;
+    while (i < left.size() && j < right.size())
+    {
+        if (left[i] > right[j])
+        {
+            result.push_back(left[i]);
+            i++;
+        }
+        else
+        {
+            result.push_back(right[j]);
+            j++;
+        }
+    }
+    while (i < left.size())
+    {
+        result.push_back(left[i]);
+        i++;
+    }
+    while (j < right.size())
+    {
+        result.push_back(right[j]);
+        j++;
+    }
+    return result;
+}
+
 bool g_is_running = true;
 
 int main()
@@ -90,32 +130,44 @@ int main()
     while (g_is_running)
     {
         system("clear");
-        cout << "=== Max Sort (linux) ==="
+        std::cout << "=== Max Sort (linux) ==="
              << endl;
-        cout << "1. Bubble Sort"
+        std::cout << "1. Bubble Sort"
              << endl;
-        cout << "2. Insertion Sort"
+        std::cout << "2. Insertion Sort"
              << endl;
-        cout << "3. Selection Sort"
+        std::cout << "3. Selection Sort"
              << endl;
-        cout << "4. Quick Sort"
+        std::cout << "4. Quick Sort"
              << endl;
-        cout << "5. sort"
+        std::cout << "5. sort"
              << endl;
-        cout << "6. Exit"
+        std::cout << "6. Merge Sort"
              << endl;
-        cout << "=========================="
+        std::cout << "z. Exit"
              << endl;
-        cout << "Choose a sorting algorithm (1-5): ";
-        int choice;
-        cin >> choice;
+        std::cout << "=========================="
+             << endl;
+        std::cout << "Choose a sorting algorithm (1-6): ";
+        /*
+        *****************************************
+        *****************************************
+        *****************************************
+        *****************************************
+        *****************************************
+        *****************************************
+        *****************************************
+        *****************************************
+        */
+        char choice;
+        std::cin >> choice;
         system("clear");
         switch (choice)
         {
-        case 1:
+        case '1':
         {
             system("clear");
-            cout << "=== Bubble Sort ==="
+            std::cout << "=== Bubble Sort ==="
                  << endl;
             vector<int> arr;
             int n;
@@ -127,19 +179,19 @@ int main()
                 arr.push_back(num);
             }
             vector<int> sortedArr = boubleSort(arr);
-            cout << "Sorted array: ";
+            std::cout << "Sorted array: ";
             for (int num : sortedArr)
             {
-                cout << num << " ";
+                std::cout << num << " ";
             }
-            cout << endl;
+            std::cout << endl;
             system("read -n 1 -s -r -p 'Press any key to continue...'");
             break;
         }
-        case 2:
+        case '2':
         {
             system("clear");
-            cout << "=== Insertion Sort ==="
+            std::cout << "=== Insertion Sort ==="
                  << endl;
             vector<int> arr;
             int n;
@@ -151,19 +203,19 @@ int main()
                 arr.push_back(num);
             }
             vector<int> sortedArr = insertionsort(arr);
-            cout << "Sorted array: ";
+            std::cout << "Sorted array: ";
             for (int num : sortedArr)
             {
-                cout << num << " ";
+                std::cout << num << " ";
             }
-            cout << endl;
+            std::cout << endl;
             system("read -n 1 -s -r -p 'Press any key to continue...'");
             break;
         }
-        case 3:
+        case '3':
         {
             system("clear");
-            cout << "=== Selection Sort ==="
+            std::cout << "=== Selection Sort ==="
                  << endl;
             vector<int> arr;
             int n;
@@ -175,19 +227,19 @@ int main()
                 arr.push_back(num);
             }
             vector<int> sortedArr = selectionsort(arr);
-            cout << "Sorted array: ";
+            std::cout << "Sorted array: ";
             for (int num : sortedArr)
             {
-                cout << num << " ";
+                std::cout << num << " ";
             }
-            cout << endl;
+            std::cout << endl;
             system("read -n 1 -s -r -p 'Press any key to continue...'");
             break;
         }
-        case 4:
+        case '4':
         {
             system("clear");
-            cout << "=== Quick Sort ==="
+            std::cout << "=== Quick Sort ==="
                  << endl;
             vector<int> arr;
             int n;
@@ -199,19 +251,19 @@ int main()
                 arr.push_back(num);
             }
             vector<int> sortedArr = quicksort(arr);
-            cout << "Sorted array: ";
+            std::cout << "Sorted array: ";
             for (int num : sortedArr)
             {
-                cout << num << " ";
+                std::cout << num << " ";
             }
-            cout << endl;
+            std::cout << endl;
             system("read -n 1 -s -r -p 'Press any key to continue...'");
             break;
         }
-        case 5:
+        case '5':
         {
             system("clear");
-            cout << "=== Sort ==="
+            std::cout << "=== Sort ==="
                  << endl;
             vector<int> arr;
             int n;
@@ -223,26 +275,50 @@ int main()
                 arr.push_back(num);
             }
             sort(arr.begin(), arr.end(), greater<int>());
-            cout << "Sorted array: ";
+            std::cout << "Sorted array: ";
             for (int num : arr)
             {
-                cout << num << " ";
+                std::cout << num << " ";
             }
-            cout << endl;
+            std::cout << endl;
             system("read -n 1 -s -r -p 'Press any key to continue...'");
             break;
         }
-        case 6:
-            cout << "Exiting..." << endl;
+        case '6':
+        {
+            system("clear");
+            std::cout << "=== Merge Sort ==="
+                 << endl;
+            vector<int> arr;
+            int n;
+            cin >> n;
+            for (int i = 0; i < n; ++i)
+            {
+                int num;
+                cin >> num;
+                arr.push_back(num);
+            }
+            vector<int> sortedArr = merge_sort(arr);
+            std::cout << "Sorted array: ";
+            for (int num : sortedArr)
+            {
+                std::cout << num << " ";
+            }
+            std::cout << endl;
+            system("read -n 1 -s -r -p 'Press any key to continue...'");
+            break;
+        }
+        case 'z':
+            std::cout << "Exiting..." << endl;
             g_is_running = false;
             break;
         default:
-            cout << "Invalid choice!" << endl;
+            std::cout << "Invalid choice!" << endl;
             system("read -n 1 -s -r -p 'Press any key to continue...'");
             break;
         }
     }
-    cout << "Bye :)\nsee you later!" << endl;
+    std::cout << "Bye :)\nsee you later!" << endl;
     system("read -n 1 -s -r -p 'Press any key to continue...'");
     return 0;
 }

@@ -2,7 +2,7 @@
 #include <vector>
 #include <algorithm>
 #include <unistd.h>
-
+#include <cstdlib>
 
 using namespace std;
 
@@ -185,7 +185,9 @@ int main()
                 std::cout << num << " ";
             }
             std::cout << endl;
-            system("read -n 1 -s -r -p 'Press any key to continue...'");
+            std::cout << "Press Enter to continue...";
+            std::cin.get();
+            std::cin.get();
             break;
         }
         case '2':
@@ -209,7 +211,9 @@ int main()
                 std::cout << num << " ";
             }
             std::cout << endl;
-            system("read -n 1 -s -r -p 'Press any key to continue...'");
+            std::cout << "Press Enter to continue...";
+            std::cin.get();
+            std::cin.get();
             break;
         }
         case '3':
@@ -233,7 +237,9 @@ int main()
                 std::cout << num << " ";
             }
             std::cout << endl;
-            system("read -n 1 -s -r -p 'Press any key to continue...'");
+            std::cout << "Press Enter to continue...";
+            std::cin.get();
+            std::cin.get();
             break;
         }
         case '4':
@@ -257,7 +263,9 @@ int main()
                 std::cout << num << " ";
             }
             std::cout << endl;
-            system("read -n 1 -s -r -p 'Press any key to continue...'");
+            std::cout << "Press Enter to continue...";
+            std::cin.get();
+            std::cin.get();
             break;
         }
         case '5':
@@ -281,7 +289,9 @@ int main()
                 std::cout << num << " ";
             }
             std::cout << endl;
-            system("read -n 1 -s -r -p 'Press any key to continue...'");
+            std::cout << "Press Enter to continue...";
+            std::cin.get();
+            std::cin.get();
             break;
         }
         case '6':
@@ -305,7 +315,9 @@ int main()
                 std::cout << num << " ";
             }
             std::cout << endl;
-            system("read -n 1 -s -r -p 'Press any key to continue...'");
+            std::cout << "Press Enter to continue...";
+            std::cin.get();
+            std::cin.get();
             break;
         }
         case 'z':
@@ -314,11 +326,15 @@ int main()
             break;
         default:
             std::cout << "Invalid choice!" << endl;
-            system("read -n 1 -s -r -p 'Press any key to continue...'");
+            std::cout << "Press Enter to continue...";
+            std::cin.get();
+            std::cin.get();
             break;
         }
     }
     std::cout << "Bye :)\nsee you later!" << endl;
-    system("read -n 1 -s -r -p 'Press any key to continue...'");
+    std::cout << "Press Enter to continue...";
+    std::cin.get();
+    std::cin.get();
     return 0;
 }

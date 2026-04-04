@@ -1,0 +1,204 @@
+{
+    // ===== 外观 & 主题 =====
+    "window.systemColorTheme": "dark",
+    "workbench.preferredDarkColorTheme": "Clion Theme Perfected",
+    "workbench.colorTheme": "Clion Theme Perfected",
+    "workbench.productIconTheme": "feather-vscode",
+    "workbench.iconTheme": "vs-nomo-dark",
+
+    // ===== 窗口行为 =====
+    "window.doubleClickIconToClose": true,
+    "window.customTitleBarVisibility": "windowed",
+    "window.controlsStyle": "custom",
+    "window.menuBarVisibility": "toggle",
+    "window.menuStyle": "custom",
+
+    // ===== 编辑器基础 =====
+    "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.6,
+    "editor.cursorWidth": 2,
+    "editor.cursorBlinking": "solid",
+    "editor.bracketPairColorization.enabled": false,
+    "editor.matchBrackets": "never",
+
+    // ===== Workbench 颜色（Darcula）=====
+    "workbench.colorCustomizations": {
+
+        "editor.background": "#2B2B2B",
+        "sideBar.background": "#2B2B2B",
+        "activityBar.background": "#313335",
+        "titleBar.activeBackground": "#2B2B2B",
+        "statusBar.background": "#313335",
+        "statusBar.foreground": "#A9B7C6",
+
+        "editor.foreground": "#A9B7C6",
+        "editor.lineHighlightBackground": "#323232",
+        "editor.selectionBackground": "#21428380",
+        "editor.inactiveSelectionBackground": "#3A3A3A60",
+        "editorCursor.foreground": "#FFFFFF",
+        "editorWhitespace.foreground": "#535353",
+
+        "editorLineNumber.foreground": "#606366",
+        "editorLineNumber.activeForeground": "#A9B7C6"
+    },
+
+    // ===== 关闭语义高亮 =====
+    "editor.semanticHighlighting.enabled": false,
+
+    // ===== TextMate 规则（100% CLion 风格）=====
+    "editor.tokenColorCustomizations": {
+        "comments": "#808080",
+        "strings": "#6A8759",
+        "numbers": "#6897BB",
+
+        "textMateRules": [
+            /* ===== 关键字 ===== */
+            {
+                "scope": [
+                    "keyword.control",
+                    "keyword.control.if",
+                    "keyword.control.else",
+                    "keyword.control.for",
+                    "keyword.control.while",
+                    "keyword.control.return",
+                    "keyword.control.break",
+                    "keyword.control.continue",
+                    "keyword.control.switch",
+                    "keyword.control.case",
+                    "keyword.control.default",
+                    "keyword.control.try",
+                    "keyword.control.catch",
+                    "keyword.control.throw",
+                    "keyword.control.new",
+                    "keyword.control.delete",
+                    "keyword.control.this",
+                    "keyword.control.true",
+                    "keyword.control.false",
+                    "keyword.control.nullptr",
+                    "keyword.control.static",
+                    "keyword.control.const",
+                    "keyword.control.volatile",
+                    "keyword.control.extern",
+                    "keyword.control.inline",
+                    "keyword.control.virtual",
+                    "keyword.control.override",
+                    "keyword.control.final",
+                    "keyword.control.explicit",
+                    "keyword.control.mutable",
+                    "keyword.control.noexcept",
+                    "keyword.control.constexpr",
+                    "keyword.control.auto"
+                ],
+                "settings": {
+                    "foreground": "#CC7832"
+                }
+            },
+
+            /* ===== 类型关键字 ===== */
+            {
+                "scope": [
+                    "storage.type",
+                    "storage.type.built-in",
+                    "keyword.type"
+                ],
+                "settings": {
+                    "foreground": "#CC7832"
+                }
+            },
+
+            /* ===== 预处理指令 ===== */
+            {
+                "scope": [
+                    "meta.preprocessor",
+                    "keyword.control.directive",
+                    "keyword.control.include",
+                    "keyword.control.define",
+                    "keyword.control.ifdef",
+                    "keyword.control.ifndef",
+                    "keyword.control.endif",
+                    "keyword.control.pragma"
+                ],
+                "settings": {
+                    "foreground": "#BBB529"
+                }
+            },
+
+            /* ===== namespace ===== */
+            {
+                "scope": [
+                    "keyword.control.namespace",
+                    "entity.name.namespace"
+                ],
+                "settings": {
+                    "foreground": "#CC7832"
+                }
+            },
+
+            /* ===== using ===== */
+            {
+                "scope": "keyword.control.using",
+                "settings": {
+                    "foreground": "#CC7832"
+                }
+            },
+
+            /* ===== 函数名 ===== */
+            {
+                "scope": "entity.name.function",
+                "settings": {
+                    "foreground": "#FFC66D"
+                }
+            },
+
+            /* ===== std ===== */
+            {
+                "scope": "entity.name.namespace.cpp",
+                "settings": {
+                    "foreground": "#B4B5C4"
+                }
+            },
+
+            /* ===== 类名 / 结构体 ===== */
+            {
+                "scope": [
+                    "entity.name.type",
+                    "entity.name.class",
+                    "entity.name.struct"
+                ],
+                "settings": {
+                    "foreground": "#4EC9B0"
+                }
+            },
+
+            /* ===== 变量 / 参数 ===== */
+            {
+                "scope": [
+                    "variable",
+                    "variable.other",
+                    "variable.parameter"
+                ],
+                "settings": {
+                    "foreground": "#A9B7C6"
+                }
+            },
+
+            /* ===== << >> ===== */
+            {
+                "scope": "punctuation.definition.template-expression",
+                "settings": {
+                    "foreground": "#477782"
+                }
+            }
+        ]
+    },
+
+    // ===== C++ 格式化 =====
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+    "workbench.activityBar.location": "top",
+    "git.confirmSync": false,
+    "chat.viewSessions.orientation": "stacked"
+}

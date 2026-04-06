@@ -16,11 +16,12 @@
     "editor.lineHeight": 1.6,
     "editor.cursorWidth": 2,
     "editor.cursorBlinking": "solid",
+
+    /* ✅ 关键：关闭 VS Code 自带括号颜色 */
     "editor.bracketPairColorization.enabled": false,
     "editor.matchBrackets": "never",
 
     "workbench.colorCustomizations": {
-
         "editor.background": "#2B2B2B",
         "sideBar.background": "#2B2B2B",
         "activityBar.background": "#313335",
@@ -41,112 +42,42 @@
 
     "editor.semanticHighlighting.enabled": false,
 
+    /* ===============================
+       ✅ CLion 2025 C++ 官方配色核心
+       =============================== */
     "editor.tokenColorCustomizations": {
         "comments": "#808080",
         "strings": "#6A8759",
         "numbers": "#6897BB",
 
         "textMateRules": [
+            /* ===== 关键字（橙色） ===== */
             {
                 "scope": [
                     "keyword.control",
-                    "keyword.control.if",
-                    "keyword.control.else",
-                    "keyword.control.for",
-                    "keyword.control.while",
-                    "keyword.control.return",
-                    "keyword.control.break",
-                    "keyword.control.continue",
-                    "keyword.control.switch",
-                    "keyword.control.case",
-                    "keyword.control.default",
-                    "keyword.control.try",
-                    "keyword.control.catch",
-                    "keyword.control.throw",
-                    "keyword.control.new",
-                    "keyword.control.delete",
-                    "keyword.control.this",
-                    "keyword.control.true",
-                    "keyword.control.false",
-                    "keyword.control.nullptr",
-                    "keyword.control.static",
-                    "keyword.control.const",
-                    "keyword.control.volatile",
-                    "keyword.control.extern",
-                    "keyword.control.inline",
-                    "keyword.control.virtual",
-                    "keyword.control.override",
-                    "keyword.control.final",
-                    "keyword.control.explicit",
-                    "keyword.control.mutable",
-                    "keyword.control.noexcept",
-                    "keyword.control.constexpr",
-                    "keyword.control.auto"
-                ],
-                "settings": {
-                    "foreground": "#CC7832"
-                }
-            },
-
-            {
-                "scope": [
-                    "punctuation.parenthesis.begin",
-                    "punctuation.parenthesis.end",
-                    "punctuation.section.parens.begin",
-                    "punctuation.section.parens.end",
-                    "meta.body.function.definition.cpp",
-                    "meta.function.definition.cpp",
-                    "source.cpp"
-                ],
-                "settings": {
-                    "foreground": "#E8E8E8"
-                }
-            },
-
-            {
-                "scope": [
                     "storage.type",
-                    "storage.type.built-in",
-                    "keyword.type"
+                    "keyword.type",
+                    "keyword.control.namespace",
+                    "entity.name.namespace",
+                    "keyword.control.using"
                 ],
                 "settings": {
                     "foreground": "#CC7832"
                 }
             },
 
+            /* ===== 预处理（黄色） ===== */
             {
                 "scope": [
                     "meta.preprocessor",
-                    "keyword.control.directive",
-                    "keyword.control.include",
-                    "keyword.control.define",
-                    "keyword.control.ifdef",
-                    "keyword.control.ifndef",
-                    "keyword.control.endif",
-                    "keyword.control.pragma"
+                    "keyword.control.directive"
                 ],
                 "settings": {
                     "foreground": "#BBB529"
                 }
             },
 
-            {
-                "scope": [
-                    "keyword.control.namespace",
-                    "entity.name.namespace"
-                ],
-                "settings": {
-                    "foreground": "#CC7832"
-                }
-            },
-
-            {
-                "scope": "keyword.control.using",
-                "settings": {
-                    "foreground": "#CC7832"
-                }
-            },
-
+            /* ===== 函数名 ===== */
             {
                 "scope": "entity.name.function",
                 "settings": {
@@ -154,13 +85,7 @@
                 }
             },
 
-            {
-                "scope": "entity.name.namespace.cpp",
-                "settings": {
-                    "foreground": "#B4B5C4"
-                }
-            },
-
+            /* ===== 类型 / 类 / struct ===== */
             {
                 "scope": [
                     "entity.name.type",
@@ -172,6 +97,15 @@
                 }
             },
 
+            /* ===== 命名空间 ===== */
+            {
+                "scope": "entity.name.namespace.cpp",
+                "settings": {
+                    "foreground": "#B4B5C4"
+                }
+            },
+
+            /* ===== 变量 ===== */
             {
                 "scope": [
                     "variable",
@@ -183,13 +117,22 @@
                 }
             },
 
+            /* ===== ✅ 小括号 () ===== */
             {
-                "scope": "punctuation.definition.template-expression",
+                "scope": [
+                    "punctuation.parenthesis.begin",
+                    "punctuation.parenthesis.end",
+                    "punctuation.section.parens.begin",
+                    "punctuation.section.parens.end",
+                    "meta.group.braces.round",
+                    "meta.braces.round"
+                ],
                 "settings": {
-                    "foreground": "#477782"
+                    "foreground": "#E8E8E8"
                 }
             },
 
+            /* ===== ✅ 大括号 {} ===== */
             {
                 "scope": [
                     "punctuation.section.block.begin",
@@ -200,6 +143,30 @@
                 ],
                 "settings": {
                     "foreground": "#E8E8E8"
+                }
+            },
+
+            /* ===== ✅ 模板 <> ===== */
+            {
+                "scope": [
+                    "punctuation.definition.template-expression.begin",
+                    "punctuation.definition.template-expression.end",
+                    "punctuation.definition.typeparameters.begin",
+                    "punctuation.definition.typeparameters.end"
+                ],
+                "settings": {
+                    "foreground": "#E8E8E8"
+                }
+            },
+
+            /* ===== 运算符 ===== */
+            {
+                "scope": [
+                    "keyword.operator",
+                    "punctuation.separator"
+                ],
+                "settings": {
+                    "foreground": "#A9B7C6"
                 }
             }
         ]

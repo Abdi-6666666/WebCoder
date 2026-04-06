@@ -90,6 +90,21 @@
 
             {
                 "scope": [
+                    "punctuation.parenthesis.begin",
+                    "punctuation.parenthesis.end",
+                    "punctuation.section.parens.begin",
+                    "punctuation.section.parens.end",
+                    "meta.body.function.definition.cpp",
+                    "meta.function.definition.cpp",
+                    "source.cpp"
+                ],
+                "settings": {
+                    "foreground": "#E8E8E8"
+                }
+            },
+
+            {
+                "scope": [
                     "storage.type",
                     "storage.type.built-in",
                     "keyword.type"
@@ -172,6 +187,19 @@
                 "scope": "punctuation.definition.template-expression",
                 "settings": {
                     "foreground": "#477782"
+                }
+            },
+
+            {
+                "scope": [
+                    "punctuation.section.block.begin",
+                    "punctuation.section.block.end",
+                    "punctuation.definition.block.begin",
+                    "punctuation.definition.block.end",
+                    "punctuation.bracket.curly"
+                ],
+                "settings": {
+                    "foreground": "#E8E8E8"
                 }
             }
         ]

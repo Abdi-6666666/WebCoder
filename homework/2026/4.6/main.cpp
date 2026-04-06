@@ -15,7 +15,7 @@ int main() {
     }
     int m;
     cin >> m;
-    int ans;
+    int ans = -2;
     for (int i = 0; i < n; ++i) {
         if(arr[i] == m)
             ans = i;

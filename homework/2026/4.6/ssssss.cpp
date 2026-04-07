@@ -2,12 +2,13 @@
 #include <vector>
 
 using namespace std;
-void find(vector<int>& nums, vector<int>& result, int target) {
+bool find(vector<int>& nums, int target) {
     for (int i = 0; i < nums.size(); i++) {
         if (nums[i] == target) {
-            result.push_back(i);
+            return true;
         }
     }
+    return false;
 }
 
 int main() {
@@ -21,10 +22,11 @@ int main() {
     }
     int target;
     cin >> target;
-    vector<int> result;
-    find(nums, result, target);
-    for (int i = 0; i < result.size(); i++) {
-        cout << result[i] << " ";
+    bool found = find(nums, target);
+    if (found) {
+        cout << "YES." << endl;
+    } else {
+        cout << "NO." << endl;
     }
     return 0;
 }

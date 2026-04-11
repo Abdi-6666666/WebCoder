@@ -1,0 +1,182 @@
+{
+    "window.systemColorTheme": "dark",
+    "workbench.preferredDarkColorTheme": "Clion Theme Perfected",
+    "workbench.colorTheme": "Clion Theme Perfected",
+    "workbench.productIconTheme": "feather-vscode",
+    "workbench.iconTheme": "vs-nomo-dark",
+
+    "window.doubleClickIconToClose": true,
+    "window.customTitleBarVisibility": "windowed",
+    "window.controlsStyle": "custom",
+    "window.menuBarVisibility": "toggle",
+    "window.menuStyle": "custom",
+
+    "editor.fontFamily": "'JetBrains Mono', Consolas, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    "editor.lineHeight": 1.6,
+    "editor.cursorWidth": 2,
+    "editor.cursorBlinking": "solid",
+
+    /* ✅ 关键：关闭 VS Code 自带括号颜色 */
+    "editor.bracketPairColorization.enabled": false,
+    "editor.matchBrackets": "never",
+
+    "workbench.colorCustomizations": {
+        "editor.background": "#2B2B2B",
+        "sideBar.background": "#2B2B2B",
+        "activityBar.background": "#313335",
+        "titleBar.activeBackground": "#2B2B2B",
+        "statusBar.background": "#313335",
+        "statusBar.foreground": "#A9B7C6",
+
+        "editor.foreground": "#A9B7C6",
+        "editor.lineHighlightBackground": "#323232",
+        "editor.selectionBackground": "#21428380",
+        "editor.inactiveSelectionBackground": "#3A3A3A60",
+        "editorCursor.foreground": "#FFFFFF",
+        "editorWhitespace.foreground": "#535353",
+
+        "editorLineNumber.foreground": "#606366",
+        "editorLineNumber.activeForeground": "#A9B7C6"
+    },
+
+    "editor.semanticHighlighting.enabled": false,
+
+    /* ===============================
+       ✅ CLion 2025 C++ 官方配色核心
+       =============================== */
+    "editor.tokenColorCustomizations": {
+        "comments": "#808080",
+        "strings": "#6A8759",
+        "numbers": "#6897BB",
+
+        "textMateRules": [
+            /* ===== 关键字（橙色） ===== */
+            {
+                "scope": [
+                    "keyword.control",
+                    "storage.type",
+                    "keyword.type",
+                    "keyword.control.namespace",
+                    "entity.name.namespace",
+                    "keyword.control.using"
+                ],
+                "settings": {
+                    "foreground": "#CC7832"
+                }
+            },
+
+            /* ===== 预处理（黄色） ===== */
+            {
+                "scope": [
+                    "meta.preprocessor",
+                    "keyword.control.directive"
+                ],
+                "settings": {
+                    "foreground": "#BBB529"
+                }
+            },
+
+            /* ===== 函数名 ===== */
+            {
+                "scope": "entity.name.function",
+                "settings": {
+                    "foreground": "#FFC66D"
+                }
+            },
+
+            /* ===== 类型 / 类 / struct ===== */
+            {
+                "scope": [
+                    "entity.name.type",
+                    "entity.name.class",
+                    "entity.name.struct"
+                ],
+                "settings": {
+                    "foreground": "#4EC9B0"
+                }
+            },
+
+            /* ===== 命名空间 ===== */
+            {
+                "scope": "entity.name.namespace.cpp",
+                "settings": {
+                    "foreground": "#B4B5C4"
+                }
+            },
+
+            /* ===== 变量 ===== */
+            {
+                "scope": [
+                    "variable",
+                    "variable.other",
+                    "variable.parameter"
+                ],
+                "settings": {
+                    "foreground": "#A9B7C6"
+                }
+            },
+
+            /* ===== ✅ 小括号 () ===== */
+            {
+                "scope": [
+                    "punctuation.parenthesis.begin",
+                    "punctuation.parenthesis.end",
+                    "punctuation.section.parens.begin",
+                    "punctuation.section.parens.end",
+                    "meta.group.braces.round",
+                    "meta.braces.round"
+                ],
+                "settings": {
+                    "foreground": "#E8E8E8"
+                }
+            },
+
+            /* ===== ✅ 大括号 {} ===== */
+            {
+                "scope": [
+                    "punctuation.section.block.begin",
+                    "punctuation.section.block.end",
+                    "punctuation.definition.block.begin",
+                    "punctuation.definition.block.end",
+                    "punctuation.bracket.curly"
+                ],
+                "settings": {
+                    "foreground": "#E8E8E8"
+                }
+            },
+
+            /* ===== ✅ 模板 <> ===== */
+            {
+                "scope": [
+                    "punctuation.definition.template-expression.begin",
+                    "punctuation.definition.template-expression.end",
+                    "punctuation.definition.typeparameters.begin",
+                    "punctuation.definition.typeparameters.end"
+                ],
+                "settings": {
+                    "foreground": "#E8E8E8"
+                }
+            },
+
+            /* ===== 运算符 ===== */
+            {
+                "scope": [
+                    "keyword.operator",
+                    "punctuation.separator"
+                ],
+                "settings": {
+                    "foreground": "#A9B7C6"
+                }
+            }
+        ]
+    },
+
+    "[cpp]": {
+        "editor.defaultFormatter": "ms-vscode.cpptools"
+    },
+    "C_Cpp.clang_format_style": "{ BasedOnStyle: Google, IndentWidth: 4 }",
+    "workbench.activityBar.location": "top",
+    "git.confirmSync": false,
+    "chat.viewSessions.orientation": "stacked"
+}
